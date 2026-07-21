@@ -1,93 +1,37 @@
-# Windows distribution
+# FOCUSMITH
 
-FOCUSMITH ships as a Flutter Windows desktop app. Use the scripts below to produce installable artifacts.
+**A focus-driven workspace for Windows.**
 
-## Prerequisites
+FOCUSMITH helps you answer one question: *what should I work on right now?* Stories live on a priority board, open in tabs, and stay on your machine — no account, no cloud, no noise.
 
-| Tool | Purpose | Download |
-|------|---------|----------|
-| Flutter SDK | Build `focusmith.exe` | [flutter.dev](https://flutter.dev) |
-| Inno Setup 6 | `.exe` installer + uninstaller | [jrsoftware.org](https://jrsoftware.org/isinfo.php) |
-| (Optional) MSIX | `.msix` package for sideload/Store | Added via `msix` dev dependency |
+---
 
-## Quick build (recommended)
+## What you get
 
-From the project root in PowerShell:
+**Priority Board** — Rank your work. Drag to reorder, create stories in seconds, and always see what matters next.
 
-```powershell
-.\scripts\build-installer.ps1
-```
+**Tabbed workspace** — Open several stories at once, like an editor. Your tabs come back when you return.
 
-This will:
+**Rich notes** — Write with headings, lists, quotes, colors, and code blocks. Each story has a clear title and a full body.
 
-1. Run `flutter build windows --release`
-2. Create `dist/FOCUSMITH-<version>-win64-portable.zip`
-3. Compile `dist/FOCUSMITH-Setup-<version>.exe` (if Inno Setup is installed)
+**Search** — Find text in the current story or across your entire workspace.
 
-**Full build** (installer + portable + MSIX when logo is present):
+**Keyboard-first** — Shortcuts for save, find, tabs, and board reordering when you want to move fast.
 
-```powershell
-.\scripts\build-all.ps1
-```
+**Private by default** — Everything is stored locally on your PC. Optional export when you want a backup.
 
-## Output artifacts
+---
 
-| File | Use |
-|------|-----|
-| `dist/FOCUSMITH-Setup-1.2.0.exe` | End-user installer (Start Menu, Add/Remove Programs) |
-| `dist/FOCUSMITH-1.2.0-win64-portable.zip` | Portable — unzip and run `focusmith.exe` |
-| `*.msix` | Modern Windows package (sideload or Store) |
+## Built for Windows
 
-## End users — install
+FOCUSMITH is a native desktop app with a dark, calm interface — designed for long focus sessions on Windows.
 
-1. Run `FOCUSMITH-Setup-<version>.exe`
-2. Follow the wizard (optional desktop shortcut)
-3. Launch from Start Menu → **FOCUSMITH**
+---
 
-## End users — uninstall
+## First launch
 
-1. **Settings → Apps → Installed apps → FOCUSMITH → Uninstall**  
-   or Start Menu → **Uninstall FOCUSMITH**
-2. The uninstaller asks whether to also delete local workspace data:
-   - **Yes** — removes `%APPDATA%\FOCUSMITH` (stories, notes, settings)
-   - **No** — keeps your data for a future reinstall
+Open FOCUSMITH and you'll see a short welcome story that explains the basics. Close it when you're ready — from then on, the workspace is yours.
 
-Portable installs: delete the unzipped folder. User data in `%APPDATA%\FOCUSMITH` is unchanged unless you delete it manually.
+---
 
-## MSIX (optional)
-
-Requires `assets/brand/app_icon.png` (512×512 PNG recommended).
-
-```powershell
-.\scripts\build-msix.ps1
-```
-
-Install: double-click the `.msix` or `Add-AppxPackage -Path .\package.msix`  
-Uninstall: Settings → Apps → FOCUSMITH
-
-For production MSIX/Store submission you need a code-signing certificate (`msix_config.certificate_path` in `pubspec.yaml`).
-
-## Version sync
-
-Keep these aligned when releasing:
-
-- `pubspec.yaml` → `version: 1.2.0+3`
-- `msix_config.msix_version` → `1.2.0.0` (four-part MSIX version)
-- Installer version is read automatically from `pubspec.yaml` by the build script
-
-## Code signing (optional)
-
-Unsigned installers may trigger Windows SmartScreen. For wider distribution, sign the setup executable with an Authenticode certificate:
-
-```powershell
-signtool sign /fd SHA256 /a /tr http://timestamp.digicert.com /td SHA256 dist\FOCUSMITH-Setup-1.2.0.exe
-```
-
-## Manual Inno Setup compile
-
-```powershell
-flutter build windows --release
-& "${env:ProgramFiles(x86)}\Inno Setup 6\ISCC.exe" /DMyAppVersion=1.2.0 /DMyAppBuild=3 installer\focusmith.iss
-```
-
-Script: [`focusmith.iss`](focusmith.iss)
+*FOCUSMITH — focus + smith. Forge your work with intention.*

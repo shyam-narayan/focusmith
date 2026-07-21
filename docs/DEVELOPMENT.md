@@ -152,7 +152,7 @@ Version comes from `pubspec.yaml`: `version: 1.2.0+3`.
 | `scripts/build-msix.ps1` | `.msix` package |
 | `scripts/build-all.ps1` | All of the above |
 
-Full details: [installer/README.md](../installer/README.md)
+Installer build steps are in section 6 above. The Inno Setup script lives in [`installer/focusmith.iss`](../installer/focusmith.iss).
 
 ---
 

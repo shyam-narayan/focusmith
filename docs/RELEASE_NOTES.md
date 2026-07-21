@@ -62,7 +62,7 @@ flutter build windows --release
 
 **Uninstall:** Settings → Apps → FOCUSMITH. The uninstaller optionally removes `%APPDATA%\FOCUSMITH` workspace data.
 
-See [installer/README.md](../installer/README.md) for portable ZIP and MSIX packaging.
+See [DEVELOPMENT.md](DEVELOPMENT.md) for portable ZIP, MSIX, and installer build steps.
 
 ---
 

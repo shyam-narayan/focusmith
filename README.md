@@ -1,71 +1,37 @@
 # FOCUSMITH
 
-**Focus-driven Windows desktop workspace** (focus + smith) — rich-text stories, VS Code-style tabs, and a keyboard-first Priority Board.
+**A focus-driven workspace for Windows.**
 
-**Version:** `1.2.0+3`
-
-> “What should I work on right now?”
+FOCUSMITH helps you answer one question: *what should I work on right now?* Stories live on a priority board, open in tabs, and stay on your machine — no account, no cloud, no noise.
 
 ---
 
-## Run locally
+## What you get
 
-```bash
-flutter pub get
-flutter run -d windows
-```
+**Priority Board** — Rank your work. Drag to reorder, create stories in seconds, and always see what matters next.
 
-Release build:
+**Tabbed workspace** — Open several stories at once, like an editor. Your tabs come back when you return.
 
-```bash
-flutter build windows --release
-```
+**Rich notes** — Write with headings, lists, quotes, colors, and code blocks. Each story has a clear title and a full body.
 
-Output: `build/windows/x64/runner/Release/focusmith.exe`
+**Search** — Find text in the current story or across your entire workspace.
 
-### Installable release (Windows)
+**Keyboard-first** — Shortcuts for save, find, tabs, and board reordering when you want to move fast.
 
-For an end-user **installer** and **portable ZIP**, install [Inno Setup 6](https://jrsoftware.org/isinfo.php), then:
-
-```powershell
-.\scripts\build-installer.ps1
-```
-
-Artifacts land in `dist/`:
-
-- `FOCUSMITH-Setup-<version>.exe` — install / uninstall via Settings → Apps
-- `FOCUSMITH-<version>-win64-portable.zip` — unzip and run (no installer)
-
-See [installer/README.md](installer/README.md) for MSIX, code signing, and uninstall details.
+**Private by default** — Everything is stored locally on your PC. Optional export when you want a backup.
 
 ---
 
-## What’s in 1.2.0
+## Built for Windows
 
-- Rebrand from PRIOTODO to **FOCUSMITH**
-- Priority Board with drag reorder and gated `Alt+Shift+↑/↓` rearrange mode
-- Tabbed workspace with open-tab persistence across restarts
-- Flutter Quill rich editor (title separate from body), custom toolbar, manual `Ctrl+S`
-- **Ctrl+F** local find / **Ctrl+Shift+F** global search
-- Optional Autosave in Settings; save-on-exit; export flushes open buffers
-- Single welcome story on first launch
-- SQLite + FTS5 storage, Hive window/workspace restore
-- Dark theme only — local-only, no cloud required
+FOCUSMITH is a native desktop app with a dark, calm interface — designed for long focus sessions on Windows.
 
 ---
 
-## Documentation
+## First launch
 
-| Doc | Purpose |
-|-----|---------|
-| [Project overview](docs/PROJECT_OVERVIEW.md) | Vision, features, FAQs |
-| [Progress tracker](docs/PROGRESS.md) | Milestone status |
-| [Developer handbook](docs/DEVELOPMENT.md) | Architecture, schema, shortcuts |
-| [Changelog](docs/CHANGELOG.md) | Release history |
-| [Release notes](docs/RELEASE_NOTES.md) | User-facing notes |
+Open FOCUSMITH and you'll see a short welcome story that explains the basics. Close it when you're ready — from then on, the workspace is yours.
 
 ---
 
-## Platform
-
-Windows is the primary target (Fluent UI + Mica). The Flutter codebase is portable, but desktop UX is optimized for Windows.
+*FOCUSMITH — focus + smith. Forge your work with intention.*
